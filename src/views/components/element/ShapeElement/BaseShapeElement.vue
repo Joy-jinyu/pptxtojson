@@ -121,7 +121,6 @@ const text = computed<ShapeText>(() => {
   right: 0;
   display: flex;
   flex-direction: column;
-  padding: 10px;
   line-height: 1.2;
   word-break: break-word;
 

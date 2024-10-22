@@ -363,14 +363,14 @@ export default () => {
               let series: number[][]
   
               if (el.chartType === 'scatterChart' || el.chartType === 'bubbleChart') {
-                const data = el.data
-                labels = data[0].map(item => item + '')
+                const [_labels = [], _series] = el.data
+                labels = _labels.map((item) => item + '')
                 legends = ['系列1']
-                series = [data[1]]
+                series = _series ? [_series] : []
               }
               else {
                 const data = el.data as ChartItem[]
-                labels = Object.values(data[0].xlabels)
+                labels = Object.values((data[0] || {}).xlabels || {})
                 legends = data.map(item => item.key)
                 series = data.map(item => item.values.map(v => v.y))
               }

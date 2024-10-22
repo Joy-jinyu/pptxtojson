@@ -136,6 +136,8 @@ interface PPTBaseElement {
   rotate: number
   link?: PPTElementLink
   name?: string
+  borderColor?: string
+  borderWidth?: number
 }
 
 
